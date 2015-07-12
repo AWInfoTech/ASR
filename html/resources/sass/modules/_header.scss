@@ -1,0 +1,220 @@
+a{}
+header{
+  font-family: robotomedium;
+  font-size: 14px;
+  position: absolute;
+  width: 100%;
+  background: $headerBgColor;
+  height: 55px;
+  z-index: 1;
+  @include breakpoint(desktop){
+    height: 106px;
+  }
+  .logo{
+    @include make-md-column(2);
+    a{
+      position: absolute;
+      top:10px;
+      left:10px;
+      img{
+        width: 45%;
+      }
+      @include breakpoint(desktop){
+        top:34px;
+        left:-9px;
+        img{
+          width: auto;
+        }
+      }
+    }
+  }
+  nav{
+    @include make-md-column(10);
+    position: fixed;
+    height: 100%;
+    right:-250px;
+    width: 250px;
+    @include vendor-prefix('transition','all 0.3s ease;');
+    &.pushNav{
+      background-color: $headerBgColor;
+      right:0;
+      @include vendor-prefix('transition','all 0.3s ease;');
+      top:0;
+      padding: 0;
+      ul{
+        float: left;
+        width: 100%;
+        li{
+          float: none;
+          display: block;
+          overflow: auto;
+          text-align: left;
+          a{
+            float: none;
+            padding: 10px;
+            height: auto;
+            span{
+              float: left;
+              margin: 0 15px 0 0 !important;
+            }
+            em{
+              display: inline;
+              line-height: 40px;
+            }
+          }
+          ul{
+            position: static;
+            a{
+              padding-left: 10px;
+			  line-height:20px;
+            }
+            ul{
+              a{
+                padding-left: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+    @include breakpoint(desktop){
+      position: relative;
+      height: auto;
+      right: 0;
+      width: 83.33333%;
+    }
+    ul{
+      float: right;
+      li{
+        float: left;
+        display: inline-block;
+        text-align: center;
+        a{
+          text-decoration: none;
+          color: $white;
+          position: relative;
+          display: block;
+          height:106px;
+          padding: 23px 12px 0 12px;
+          float: left;
+          overflow: hidden;
+          @include vendor-prefix('transform','translateZ(0)');
+          @include vendor-prefix('transition-duration','0.3s');
+          @include vendor-prefix('transition-property','color, background-color');
+          &:hover{
+            color: $darkGrey;
+          }
+          span{
+            display: block;
+            margin: auto;
+            &.icons-navFoodDrinks{
+              margin-bottom: 5px;
+            }
+            &.icons-navEvents{
+              margin-bottom: 12px;
+            }
+			&.icons-navTeam{
+              margin-top: -10px;
+            }
+            &.icons-navBookTable{
+              margin-bottom: 21px;
+            }
+            &.icons-navParties{
+              margin-bottom: 16px;
+            }
+            &.icons-navGift{
+              margin-bottom: 14px;
+            }
+            &.icons-navContact{
+              margin-bottom: 20px;
+            }
+            &.icons-navDirection{
+              margin-bottom: 15px;
+            }
+          }
+          em{
+            display: block;
+          }
+        }
+        ul{
+          font-size: 12px;
+          float: none;
+          position: absolute;
+          padding: 0;
+          top: 106px;
+          display: none;
+          z-index: 99;
+          li{
+            float: none;
+            display: block;
+            position: relative;
+            a{
+              float: none;
+              display: block;
+              border: none;
+              height: auto;
+              padding: 20px 100px 20px 15px;
+              color: $darkGrey;
+              text-align: left;
+              &:hover{
+                background-color: #fef0b4;
+              }
+            }
+            li{
+              a{
+                &:hover{
+                  background-color: #fef0b4;
+                }
+              }
+            }
+          }
+        }
+        &:hover{
+          a{
+            background-color: $lightYellow;
+            color: $darkGrey;
+          }
+          ul{
+            display: block;			
+            li{
+              &:hover{
+                ul{
+                  display: block;
+				  min-width:310px;
+				  a{
+					padding-right:10px;
+				  }
+                }
+              }
+            }
+            ul{
+              display: none;
+              left: 100%;
+              top: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .pushMenuBtn{
+    width: 40px;
+    float: right;
+    margin: 12px 12px 0 0;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    @include breakpoint(desktop){
+      display: none;
+    }
+    span{
+      display: block;
+      height: 5px;
+      width: 100%;
+      background-color: $white;
+      margin-bottom: 6px;
+    }
+  }
+}

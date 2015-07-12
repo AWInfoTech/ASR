@@ -1,0 +1,431 @@
+.innerPage{
+  section{
+  margin: 110px 0 110px 0;
+  @include make-xs-column(12);
+  @include breakpoint(desktop){
+    margin: 265px 0 110px 0;
+  }
+    h5{
+      text-align: center;
+      margin-top: 25px;
+      font-size: 12px;
+      font-family: lhfbostontruckstyleregular;
+      color: $yellow;
+      margin-bottom: -10px;
+      @include breakpoint(tablet){
+        text-align: right;
+        font-size: 18px;
+        margin-top: -20px;
+        margin-bottom: 0;
+      }
+	  a{
+		color: $yellow;
+	  }
+    }
+    h1{
+      color: $white;
+      font-family: lhfbostontruckstyleregular;
+      font-size: 28px;
+      text-align: center;
+      margin-top: 35px;
+      margin-bottom: 75px;
+      @include breakpoint(tablet){
+        font-size: 40px;
+      }
+    }
+    article{
+      margin-top: 25px;
+      padding: 30px 15px;
+      background-color: $white;
+      h2{
+        font-family: lhfbostontruckstyleregular;
+        color: $darkGrey;
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 10px;
+        line-height: 28px;
+        @include breakpoint(desktop){
+          font-size: 28px;
+          line-height: 40px;
+        }
+      }
+      h3{
+        color: $headerBgColor;
+        font-size: 18px;
+        font-weight: 700;
+        font-family: 'Alegreya', serif;
+        text-transform: uppercase;
+        line-height: 26px;
+        margin-bottom: 20px;
+        @include breakpoint(desktop){
+          font-size: 24px;
+          line-height: 30px;
+        }
+      }
+      hr{
+        margin: 40px 0;
+        height: 3px;
+        background-color: $yellow;
+        border: none;
+      }
+      aside{
+        @include make-md-column(4);
+        padding: 0;
+        margin-bottom: 10px;
+        text-align: center;
+        img{
+          width: 100%;
+          @include breakpoint(phone){
+            width: 50%;
+          }
+          @include breakpoint(desktop){
+            width: 100%;
+          }
+        }
+        @include breakpoint(desktop){
+          padding-left: 15px;
+          padding-right: 15px;
+          margin-bottom: 0;
+        }
+      }
+      section{
+        @include make-md-column(8);
+        margin: 0;
+        padding: 0;
+        @include breakpoint(tablet){
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        p{
+          font-size: 14px;
+          line-height: 20px;
+          margin-bottom: 20px;
+          margin-right: 0px;
+          @include breakpoint(tablet){
+            margin-right: 50px;
+          }
+        }
+        .date{
+          font-size: 24px;
+        }
+      }
+      &.bannerWrapper{
+        padding: 0;
+        background-color: $black;
+        position: relative;
+        z-index: 0;
+        .bannerInfo{
+          width: 100%;
+          padding: 0;
+          color: $white;
+          float: left;
+          @include breakpoint(desktop){
+            width: 28%;
+            padding: 0 20px 0 35px;
+          }
+          h4{
+            font-family: 'Alegreya', serif;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            margin-bottom: 5px;
+            @include breakpoint(desktop){
+              font-size: 24px;
+              line-height: 28px;
+              margin-bottom: 15px;
+            }
+          }
+          p{
+            font-size: 12px;
+            line-height: 16px;
+            margin-right: 0px;
+            @include breakpoint(desktop){
+              font-size: 14px;
+              line-height: 20px;
+              margin-right: 20px;
+            }
+          }
+          div{
+            padding: 10px;
+            @include breakpoint(desktop){
+              @include vendor-prefix('transform','translateY(50%)');
+              padding: 0;
+            }
+          }
+        }
+        .bannerImg{
+          width: 100%;
+          padding: 0;
+          float: right;
+          @include breakpoint(desktop){
+            width: 72%;
+          }
+          img{
+            width: 100%;
+            float: left;
+          }
+        }
+      }
+    }
+  }
+  .singleCol{
+    @include make-xs-column(12);
+    padding: 0;
+    @include breakpoint(tablet){
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+	p{
+		line-height:20px;
+	}
+  }
+  .menuIcon{
+    text-align: center;
+    img{
+      margin-top: -100px;
+    }
+  }
+  .menuCol{
+    @include make-md-column(4);
+    margin-top: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    @include breakpoint(tablet){
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-top: 50px;
+    }
+    .menuItem{
+      margin-bottom: 35px;
+      padding: 0;
+      @include breakpoint(tablet){
+        padding: 0 20px;
+      }
+    }
+    .menuType{
+      font-family: lhfbostontruckstyleregular;
+      font-size: 18px;
+      color: $black;
+      line-height: 32px;
+      margin-bottom: 20px;
+      padding: 0;
+      @include breakpoint(tablet){
+        font-size: 24px;
+        padding: 0 20px;
+      }
+    }
+    .menuTitle{
+      width: 80%;
+      float: left;
+      font-family: 'La Belle Aurore', cursive;
+      font-size: 22px;
+      margin-bottom: 10px;
+      @include breakpoint(tablet){
+        font-size: 26px;
+      }
+    }
+    .menuDis{
+      font-size: 12px;
+      line-height: 14px;
+      width: 80%;
+      float: left;
+      color: $lightGrey;
+      &.fullWidth{
+        width: 100%;
+      }
+      span{
+        color: $headerBgColor;
+      }
+      @include breakpoint(tablet){
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+    .menuPrice{
+      width: 20%;
+      text-align: right;
+      float: right;
+      font-family: 'La Belle Aurore', cursive;
+      color: $headerBgColor;
+      font-size: 22px;
+      @include breakpoint(tablet){
+        font-size: 26px;
+      }
+      &.roboto{
+        font-family: robotoregular;
+        font-size: 16px;
+      }
+    }
+  }
+  .menuPager{
+    font-family: lhfbostontruckstyleregular;
+    font-size: 16px;
+    overflow: auto;
+    @include breakpoint(tablet){
+      font-size: 24px;
+      margin: 20px 0;
+    }
+    span{
+      display: inline-block;
+      vertical-align: middle;
+      @include vendor-prefix('transform','scale(0.5)');
+      @include breakpoint(tablet){
+        @include vendor-prefix('transform','scale(1)');
+      }
+    }
+	em{
+		display:none;
+		@include breakpoint(tablet){
+			display:inline;
+		}
+	}
+    a{
+      color: $white;
+    }
+    .next{
+      float: right;
+      span{
+        margin-left: 20px;
+      }
+    }
+    .back{
+      float: left;
+      span{
+        margin-right: 20px;
+      }
+    }
+  }
+  .googleMap{
+    margin: 0 -15px 40px -15px;
+    @include breakpoint(tablet){
+      margin: 0 -30px 40px -30px;
+    }
+  }
+  .location{
+    font-size: 14px;
+    margin-bottom: 20px;
+    span{
+      display: block;
+      margin: auto;
+      @include breakpoint(tablet){
+        display: inline-block;
+        float: left;
+        margin-right: 20px;
+      }
+    }
+    p{
+      float: left;
+      padding-top: 20px;
+    }
+    a{
+      color: $black;
+      text-decoration: underline;
+    }
+  }
+  .directions{
+    span {
+      display: block;
+      margin: auto;
+      margin-bottom: 20px;
+      @include breakpoint(tablet){
+        display: inline-block;
+        float: left;
+        margin: 0;
+      }
+    }
+    strong,b{
+      font-weight: 700;
+    }
+    p{
+      font-size: 14px;
+      @include breakpoint(tablet){
+        padding-left: 100px;
+        padding-right: 50px;
+      }
+    }
+  }
+  .hours{
+	h2{
+		margin-top:30px;
+		float:right !important;
+		&.kitchen{
+			@include make-xs-column(6);
+			@include make-sm-column(5);
+			text-align:right;
+			@include breakpoint(tablet){
+				text-align:left;
+			}		
+		}
+		&.bar{
+			@include make-xs-column(6);
+			@include make-sm-column(4);
+			text-align:left;
+			@include breakpoint(tablet){
+				text-align:left;
+			}		
+		}
+		span{
+			display:none;
+			vertical-align:middle;
+			margin-right:15px;
+			@include breakpoint(tablet){
+				display:inline-block;
+			}
+		}
+	}
+	.row{
+		padding:15px 0;
+		border-bottom:solid 1px $headerBgColor;
+		&:last-child{
+			border-bottom:none;
+		}
+		.days{
+			@include make-xs-column(12);
+			@include make-sm-column(4);
+			margin:auto;
+			text-align:center;
+			span{
+				display:inline-block;
+			}
+			.sep{
+				font-size:28px;
+				font-weight:bold;
+				margin-top:-65px;
+				padding:0 10px;
+				vertical-align:middle;
+			}
+		}
+		.timingsK,.timingsB{
+			@include make-xs-column(6);
+			@include make-sm-column(4);
+			font-size:16px;
+			font-family:'Alegreya', serif;
+			color:$headerBgColor;
+			text-transform:uppercase;
+			font-weight:bold;
+			padding-top:30px;
+			@include breakpoint(desktop){
+				font-size:24px;
+			}
+		}
+		.timingsK{			
+			text-align:right;
+			@include breakpoint(tablet){
+				padding-left:60px;
+				text-align:left;
+			}
+			@include breakpoint(desktop){
+				padding-left:45px;
+			}
+		}
+		.timingsB{
+			text-align:left;	
+			@include breakpoint(tablet){
+				padding-left:80px;
+			}
+			
+		}
+	}
+  }
+}

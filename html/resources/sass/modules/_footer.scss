@@ -1,0 +1,145 @@
+footer{
+  color:$white;
+  font-size: 14px;
+  ul{
+    margin:25px 0 10px 0px ;
+    overflow: visible;
+    @include breakpoint(tablet){
+      margin:25px 0 10px 70px ;
+    }
+    li{
+      float: none;
+      display: block;
+      border-bottom: solid 1px $lightGrey;
+      position: relative;
+      span{
+        content: '+';
+        position: absolute;
+        right: 10px;
+        top: 0;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        font-size: 23px;
+        @include breakpoint(tablet){
+          display: none;
+        }
+      }
+      @include breakpoint(tablet){
+        margin-right: 15px;
+        float: left;
+        display: inline-block;
+        border-bottom: none;
+      }
+      a{
+        color: $white;
+        line-height: 26px;
+        display: block;
+        padding-left: 10px;
+        @include breakpoint(tablet){
+          display: inline;
+          line-height: 14px;
+          padding-left: 0;
+        }
+      }
+      ul{
+        padding: 0;
+        margin: 0 0 10px 10px;
+        font-size: 12px;
+        display: none;
+        @include breakpoint(tablet){
+          display: block;
+          margin: 10px 0 0 0;
+        }
+        li{
+          display: block;
+          clear: both;
+          border-bottom: none;
+		  margin-bottom:10px;
+          a{
+            color: $lightGrey;
+            line-height: 16px;
+            padding-left: 0;
+          }
+        }
+      }
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+  }
+  .infoFooter{
+    margin: 0;
+    background: $darkGrey;
+    padding-top: 10px;
+    padding-bottom: 10px;
+	clear:both;
+	
+    @include breakpoint(tablet){
+      margin: 0 15px;
+    }
+    div{
+      text-align: left;
+      margin-bottom: 15px;
+      @include breakpoint(desktop){
+        text-align: center;
+        margin-bottom: 0;
+      }
+      span{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      p{
+        display: inline-block;
+        text-align: left;
+        padding-left: 10px;
+		a{
+			text-decoration:none;
+			color:$white;
+		}
+      }
+      &.address{
+		@include make-md-column(4);
+        margin-top: 3px;
+        p{
+          padding-top: 10px;
+        }
+        span{
+          margin-top: -15px;
+        }
+      }
+	  &.phone{
+		@include make-md-column(3);
+	  }
+      &.email{
+		@include make-md-column(5);
+        margin-top: 8px;
+      }
+    }
+  }
+  .credits{
+    margin: 10px 0;
+    font-size: 10px;
+    color: $lightGrey;
+    @include breakpoint(phone){
+      margin: 10px 15px;
+    }
+    .copy{
+      float: left;
+    }
+    .webmaster{
+      float: left;
+      margin-top: 10px;
+      @include breakpoint(phone){
+        float: right;
+        margin-top: 0;
+      }
+    }
+    a{
+      color: $lightGrey;
+    }
+  }
+}
+.footerwraper{
+  background-color: #000000;
+}

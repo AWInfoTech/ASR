@@ -1,0 +1,141 @@
+.bookingATable{
+  margin: 20px 0 0 0;
+  @include breakpoint(tablet){
+    margin: 20px 40px 0 40px;
+  }
+  h4{
+    font-weight: 700;
+    font-size: 14px;
+    float: left;
+    @include breakpoint(tablet){
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+  }
+  .msg{
+    float: right;
+    font-size: 12px;
+    color: $lightGrey;
+    line-height: 24px;
+  }
+  p{
+	line-height:20px;
+  }
+  fieldset{
+    margin-bottom: 10px;
+    background-color: $ultraLightGrey;
+    padding:20px;
+    .iconTable{
+      display: block;
+      margin: 0 auto 20px;
+      @include breakpoint(tablet){
+        float: left;
+        margin: 0;
+      }
+    }
+    ul.type1{
+      width: 100%;
+      @include breakpoint(tablet){
+        padding-left: 100px;
+      }
+      li{
+        @include make-xs-column(12);
+        @include make-md-column(4);
+        display: inline-block;
+        margin-bottom: 15px;
+        @include breakpoint(tablet){
+          margin-bottom: 0;
+        }
+        p{
+          font-weight: 700;
+          margin-bottom: 5px;
+          font-size: 18px;
+          @include breakpoint(tablet){
+            margin-bottom: 15px;
+          }
+		  
+        }
+        input,select{
+          width: 100%;
+          border:solid 1px $darkGrey;
+          border-top: none;
+          border-right: none;
+          border-left: none;
+          background-color: $ultraLightGrey;
+          line-height: 24px;
+          font-size: 12px;
+        }
+        select{
+          height: 27px;
+        }
+      }
+    }
+    ul.type2{
+      li{
+        @include make-xs-column(12);
+        @include make-md-column(6);
+        margin-bottom: 10px;
+        p{
+          font-weight: 700;
+          font-size: 14px;
+          display: inline-block;
+          line-height: 24px;
+          @include breakpoint(tablet){
+            float: left;
+            width: 100px;
+          }
+		  small{
+			font-weight:normal;
+			font-size:10px;			
+		  }
+        }
+        input{
+          display: inline-block;
+          border:solid 1px $darkGrey;
+          border-top: none;
+          border-right: none;
+          border-left: none;
+          background-color: $ultraLightGrey;
+          line-height: 24px;
+          width: 100%;
+          font-size: 12px;
+          @include breakpoint(tablet){
+            width: 60%;
+          }
+        }
+        &.full{
+          @include make-xs-column(12);
+          input{
+            width: 100%;
+            @include breakpoint(tablet){
+              width: 29%;
+            }
+          }
+          textarea{
+            display: inline-block;
+            width: 100%;
+            background: url('../../resources/images/textareaBg.gif');
+            line-height: 39px;
+            border: none;
+            @include breakpoint(tablet){
+              width: 81%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .btn{
+    font-family: robotomedium;
+    font-size: 14px;
+    margin: 20px 0;
+    background-color: $white;
+    padding: 10px 35px;
+    border:solid 3px $headerBgColor;
+    cursor: pointer;
+  }
+}
+
+.ui-widget{
+  font-size:.75em !important;
+}

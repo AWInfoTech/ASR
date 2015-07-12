@@ -1,0 +1,188 @@
+.homePage{
+  margin-bottom: 110px;
+  article{
+    @include make-sm-column(8);
+    .displaySlider{
+      position: relative;
+      margin-bottom: 20px;
+      @include breakpoint(tablet){
+        margin-bottom: 35px;
+      }
+      img{
+        width: 100%;
+      }
+      .pager{
+        position: absolute;
+        z-index: 99;
+        bottom: 10px;
+        right:25px;
+        height: 13px;
+        overflow: hidden;
+        span{
+          font-size: 50px;
+          color: $lightGrey;
+          cursor: pointer;
+          line-height: 10px;
+          &.cycle-pager-active{
+            color: $lightPink;
+          }
+        }
+      }
+    }
+    .displayBox{
+      @include make-sm-column(6);
+      color: $darkBlue;
+      margin-bottom: 20px;
+      padding: 0;
+      @include breakpoint(tablet){
+        margin-bottom: 0;
+      }
+      &.col1{
+        padding-left: 0;
+        .innerBox{
+          height: auto;
+          @include breakpoint(tablet){
+            height: auto;
+          }
+        }
+        @include breakpoint(tablet){
+          padding-right: 15px;
+        }
+      }
+      &.col2{
+        padding-right: 0;
+        .innerBox{
+          background:$white url(../images/homeDisplayBoxBg.jpg) no-repeat center bottom;
+          position: relative;
+          background-size: cover;
+          position: relative;
+          background-position-y: 110px;
+          background-position-x: 0;
+		  height:300px;
+          @include breakpoint(phone){
+            background-size: cover;
+            background-position-y: 110px;
+            background-position-x: 0;			
+          }
+          @include breakpoint(tablet){
+            background-position-y: 140px;
+			height:420px;
+          }
+          @include breakpoint(desktop){
+            background-position-y: 183px;
+            background-size: contain;
+			height:414px;
+          }
+        }
+      }
+      .innerBox{
+        background-color: $white;
+        height: auto;
+        padding: 20px;
+        @include breakpoint(phone){
+          height: 330px;
+        }
+      }
+      h2{
+        margin-top: 10px;
+        text-align: center;
+        font-size: 14px;
+        font-family: lhfbostontruckstyleregular;
+        font-weight: 700;
+        line-height: 24px;
+        @include breakpoint(desktop){
+          font-size: 18px;
+          line-height: 32px;
+        }
+      }
+      p{
+        margin-top: 5px;
+        font-size: 12px;
+        line-height: 18px;
+        strong{
+          font-weight: bold;
+        }
+        @include breakpoint(desktop){
+          font-size: 14px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+  aside{
+    @include make-sm-column(4);
+    .innerBox{
+      background: $white;
+      padding: 20px 0 0 0;
+      h2{
+        font-family: lhfbostontruckstyleregular;
+        font-size: 18px;
+        color: $darkBlue;
+        line-height: 30px;
+        margin: 0 20px;
+      }
+      h3{
+        font-family: lhfbostontruckstyleregular;
+        font-size: 16px;
+        color: $headerBgColor;
+        line-height: 33px;
+        margin: 0 20px;
+      }
+      .eventDetails{
+        position: relative;
+        height: auto;
+        color: $white;
+        clear: both;
+        overflow: auto;
+        // needs latest Compass, add '@import "compass"' to your scss
+        background-color: #2b7387; // Old browsers
+        @include filter-gradient(#2b7387, #83dce3, horizontal); // IE6-8 fallback on horizontal gradient
+        // IE9 SVG, needs conditional override of 'filter' to 'none'
+        $experimental-support-for-svg: true;
+        @include background-image(linear-gradient(left top,  #2b7387 0%,#83dce3 100%));
+        padding: 20px 0 0 0;
+        .eventTitle{
+          font-family: lhfbostontruckstyleregular;
+          font-size:14px;
+          margin: 15px 25px 33px;
+		  line-height:28px;
+          @include breakpoint(desktop){
+            font-size: 18px;
+            margin: 15px 25px 35px;
+          }
+        }
+        .eventDate{
+          font-family: lhfbostontruckstyleregular;
+          margin: 0 25px 20px 25px;
+          font-size: 28px;
+          @include clearfix();
+          span{
+            display: inline-block;
+            float: left;
+          }
+          sub{
+            display: inline-block;
+            float: left;
+            font-size: 14px;
+            margin-top: -4px;
+            margin-right: 15px;
+          }		  
+        }
+        .eventTagLine{
+          font-family: 'La Belle Aurore', cursive;
+          font-size: 18px;
+          margin: 0 0 20px 35px;
+        }
+        .eventSummery{
+          font-size: 14px;
+          margin: 20px 30px;
+          line-height: 20px;
+        }
+		a.bigBtn{
+			position:static;
+			margin:15px 25px;
+		}
+      }
+    }
+  }
+}

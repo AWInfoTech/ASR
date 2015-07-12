@@ -1,0 +1,64 @@
+@import "compass";
+@import "compass/reset";
+@import "variables";
+@import "mixins";
+@import "bootstrap";
+@import "fonts";
+@import "sprites";
+@import "animate";
+@import "modules/header";
+@import "modules/homeSlider";
+@import "modules/home";
+@import "modules/footer";
+@import "modules/inner";
+@import "modules/bookATable";
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background:#000000 url(../images/home_bg.jpg) top center;
+  font-family: robotoregular;
+  @include vendor-prefix('transition','all 0.3s ease;');
+  left:0;
+  &.innerPage{
+    background:#000000 url(../images/innerPageBg.jpg) no-repeat top center;
+  }
+  &.bodyPush{
+    position: relative;
+    left:-250px;
+    overflow: hidden;
+  }
+}
+.row{
+  @include make-row();
+}
+a{
+  text-decoration: none;
+}
+a.bigBtn{
+  display: block;
+  position: absolute;
+  border: solid 3px $white;
+  bottom: 20px;
+  left: 30px;
+  right: 30px;
+  padding: 15px;
+  text-align: center;
+  font-family: 'Alegreya', serif;
+  text-transform: uppercase;
+  color: $white;
+  font-weight: 700;
+  font-size: 18px;
+}
+.clear{
+  @include clearfix();
+}
+
+p{
+	a{
+		color:$black;
+		text-decoration:underline;
+	}
+}

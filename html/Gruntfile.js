@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         concat: {
             // 2. Configuration for concatinating files goes here.
             dist: {
-                src: ['resources/js/jquery-1.11.1.js','resources/js/jquery.cycle2.min.js','resources/js/jquery.mousewheel.min.js','resources/js/jquery.simplr.smoothscroll.js','resources/js/wow.min.js','resources/js/scripts.js'],
+                src: ['resources/js/jquery-1.11.1.js','resources/js/jquery.cycle2.min.js','resources/js/jquery.mousewheel.min.js','resources/js/jquery.simplr.smoothscroll.js','resources/js/wow.min.js','resources/js/jquery.placeholder.min.js','resources/js/scripts.js'],
                 dest: 'resources/js/build/production.js'
             }
         },

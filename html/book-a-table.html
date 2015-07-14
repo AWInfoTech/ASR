@@ -109,11 +109,13 @@
                                 </li>
                                 <li>
                                     <p>Date</p>
-                                    <input type="text" name="date" placeholder="Select Date" id="datepicker" required/>
+                                    <input type="text" name="date" placeholder="Select Date" id="datepicker" class="required" data-error="Above field is required."/>
+									<em class="error"></em>
                                 </li>
                                 <li>
                                     <p>Time</p>
-                                    <input type="text"  name="time" placeholder="Time" required/>
+                                    <input type="text"  name="time" placeholder="HH:MM AM/PM" class="required time" data-error="Above field is required."/>
+									<em class="error"></em>
                                 </li>
                             </ul>
                         </fieldset>
@@ -124,15 +126,18 @@
                             <ul class="type2">
                                 <li>
                                     <p>Full Name</p>
-                                    <input type="text"  name="name" placeholder="Ex John Smith" required/>
+                                    <input type="text"  name="name" placeholder="Ex John Smith" class="required" data-error="Above field is required."/>
+									<em class="error"></em>
                                 </li>
                                 <li>
                                     <p>Email</p>
-                                    <input type="email"  name="email" placeholder="Enter Email ID" required/>
+                                    <input type="email"  name="email" placeholder="Enter Email ID" class="required email" data-error="Above field is required."/>
+									<em class="error"></em>
                                 </li>
                                 <li class="full">
                                     <p>Phone</p>
-                                    <input type="tel"  name="phone" placeholder="Enter Phone Number" required/>
+                                    <input type="tel"  name="phone" placeholder="Enter Phone Number" class="required" data-error="Above field is required."/>
+									<em class="error"></em>
                                 </li>
                                 <li class="full">
                                     <p>Note <small>(Optional)</small></p>

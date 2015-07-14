@@ -47,8 +47,7 @@ $(function() {
     });
 	$('#bookATable').on('submit',function(e) {
         e.preventDefault();
-		//alert($("#bookATable").serialize());return;
-        $.post("bookATableCode.php", $("#bookATable").serialize(),  function(response) {
+		$.post("bookATableCode.php", $("#bookATable").serialize(),  function(response) {
             console.log('>>>>>>>>>>>>'+response);
             if(response == 1) {
                 $('#bookATable').find("input[type=text],input[type=date],input[type=email], textarea, select").val("");
@@ -86,6 +85,47 @@ $(function() {
         $(this).prev().slideDown();
         $(this).text('-');
     });
+	$('input, textarea').placeholder();
+	$('.required').on('blur',function(){
+		if($(this).val() == ''){
+			$(this).addClass('error');
+            $(this).next().text($(this).data('error')).css('display','block');
+        }else {
+			$(this).removeClass('error');            
+            $(this).next().text('').hide();
+        }
+	});
+	$('.time').on('blur',function(){
+        var timeTest = validateTime($(this).val());
+		if(!timeTest){
+			$(this).addClass('error');
+            $(this).next().text('Please enter time in HH:MM AM/PM format').css('display','block');
+        }else{
+			$(this).removeClass('error');            
+            $(this).next().text('').hide();
+        }
+    });
+	$('.time').on('blur',function(){
+        var timeTest = validateTime($(this).val());
+		if(!timeTest){
+			$(this).addClass('error');
+            $(this).next().text('Please enter time in HH:MM AM/PM format').css('display','block');
+        }else{
+			$(this).removeClass('error');            
+            $(this).next().text('').hide();
+        }
+    });
+	$('.email').on('blur',function(){
+        var emailTest = validateEmail($(this).val());
+		if(!emailTest){
+			$(this).addClass('error');
+            $(this).next().text('Please enter email in valid format').css('display','block');
+        }else{
+			$(this).removeClass('error');            
+            $(this).next().text('').hide();
+        }
+    });
+	
 });
 
 function getQueryString(sParam)
@@ -101,4 +141,15 @@ function getQueryString(sParam)
         }
     }
 }
-var a;
+function validateEmail(email) {
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        return re.test(email);
+    }
+function validateNumber(number){
+	var re = /^\d+$/;
+	return re.test(number);
+}
+function validateTime(time){
+	var re = /^([0-1]\d):([0-5]\d)\s?(?:AM|PM)?$/i;
+	return re.test(time);
+}

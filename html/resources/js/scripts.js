@@ -45,20 +45,7 @@ $(function() {
         $('.page2Next').show();
         return false;
     });
-	$('#bookATable').on('submit',function(e) {
-        e.preventDefault();
-		$.post("bookATableCode.php", $("#bookATable").serialize(),  function(response) {
-            console.log('>>>>>>>>>>>>'+response);
-            if(response == 1) {
-                $('#bookATable').find("input[type=text],input[type=date],input[type=email], textarea, select").val("");
-                alert('Your request sent successfully! We will revert you back shortly.')
-            }else{
-                alert('System Error, Please try again later!')
-            }
-        });
-        return false;
-    });
-    $('.pushMenuBtn').on('click',function(){
+	$('.pushMenuBtn').on('click',function(){
         $(this).addClass('pushTriggered');
         $('body').toggleClass('bodyPush');
         $('.mainNav').toggleClass('pushNav');
@@ -85,7 +72,78 @@ $(function() {
         $(this).prev().slideDown();
         $(this).text('-');
     });
-	$('input, textarea').placeholder();
+	$('input, textarea').placeholder();	
+	var isValidate;
+	$('#bookATable').on('submit',function(e) {
+		e.preventDefault();		
+		//validateForm();
+		//if(isValidate){
+			$.post("bookATableCode.php", $("#bookATable").serialize(),  function(response) {
+				console.log('>>>>>>>>>>>>'+response);
+				if(response == 1) {
+					$('#bookATable').find("input[type=text],input[type=date],input[type=email], textarea, select").val("");
+					alert('Your request sent successfully! We will revert you back shortly.')
+				}else{
+					alert('System Error, Please try again later!')
+				}
+			});
+			return false;
+		//}		
+    });
+	$('#bookTheSpace').on('submit',function(e) {
+		e.preventDefault();		
+		//validateForm();
+		//if(isValidate){
+			$.post("bookTheSpaceCode.php", $("#bookTheSpace").serialize(),  function(response) {
+				console.log('>>>>>>>>>>>>'+response);
+				if(response == 1) {
+					$('#bookTheSpace').find("input[type=text],input[type=date],input[type=email], textarea, select").val("");
+					alert('Your request sent successfully! We will revert you back shortly.')
+				}else{
+					alert('System Error, Please try again later!')
+				}
+			});
+			return false;
+		//}		
+    });
+	function validateForm(){
+		$('.required').each(function(){
+			if($(this).val() == ''){
+				$(this).addClass('error');
+				$(this).next().text($(this).data('error')).css('display','block');
+				isValidate = false;
+			}
+			else {
+				$(this).removeClass('error');            
+				$(this).next().text('').hide();
+				isValidate = true;
+			}
+		});
+		$('.time').each(function(){
+			var timeTest = validateTime($(this).val());			
+			if(!timeTest){
+				$(this).addClass('error');
+				$(this).next().text('Please enter time in HH:MM AM/PM format').css('display','block');
+				isValidate = false;
+			}else{
+				$(this).removeClass('error');            
+				$(this).next().text('').hide();
+				isValidate = true;
+			}		
+		});
+		$('.email').each(function(){
+			var emailTest = validateEmail($(this).val());
+			if(!emailTest){
+				$(this).addClass('error');
+				$(this).next().text('Please enter email in valid format').css('display','block');
+				isValidate = false;
+			}else{
+				$(this).removeClass('error');            
+				$(this).next().text('').hide();
+				isValidate = true;
+			}
+		});
+	}
 	$('.required').on('blur',function(){
 		if($(this).val() == ''){
 			$(this).addClass('error');
@@ -95,16 +153,6 @@ $(function() {
             $(this).next().text('').hide();
         }
 	});
-	$('.time').on('blur',function(){
-        var timeTest = validateTime($(this).val());
-		if(!timeTest){
-			$(this).addClass('error');
-            $(this).next().text('Please enter time in HH:MM AM/PM format').css('display','block');
-        }else{
-			$(this).removeClass('error');            
-            $(this).next().text('').hide();
-        }
-    });
 	$('.time').on('blur',function(){
         var timeTest = validateTime($(this).val());
 		if(!timeTest){

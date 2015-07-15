@@ -79,20 +79,13 @@
                     <h4>BOOK THE SPACE or CALL US at 908.735.0101</h4>
                     <span class="msg">All fields are mandatory</span>
                     <div class="clear"></div>
-                    <form id="bookATable">
+                    <form id="bookTheSpace">
                         <fieldset>
                             <span class="icons-sprite icons-calender iconTable"></span>
                             <ul class="type1">
                                 <li>
                                     <p>Guests</p>
                                     <select name="noOfGuest">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
                                         <option>8</option>
                                         <option>9</option>
                                         <option>10</option>
@@ -106,12 +99,18 @@
                                         <option>18</option>
                                         <option>19</option>
                                         <option>20</option>
+										<option>21</option>
+                                        <option>22</option>
+                                        <option>23</option>
+                                        <option>24</option>
+                                        <option>25</option>
                                     </select>
 
                                 </li>
                                 <li>
                                     <p>Date</p>
-                                    <input type="text" name="date" placeholder="Select Date" id="datepicker" required/>
+                                    <input type="text" name="date" placeholder="Select Date" id="datepicker" class="required" data-error="Above field is required."/>
+									<em class="error"></em>
                                 </li>                                
                             </ul>
                         </fieldset>
@@ -119,22 +118,25 @@
                             <ul class="type2">
                                 <li>
                                     <p>Full Name</p>
-                                    <input type="text"  name="name" placeholder="Ex John Smith" required/>
+                                    <input type="text"  name="name" placeholder="Ex John Smith" class="required" data-error="Above field is required."/>
+									<em class="error"></em>
                                 </li>
                                 <li>
                                     <p>Email</p>
-                                    <input type="email"  name="email" placeholder="Enter Email ID" required/>
+                                    <input type="email"  name="email" placeholder="Enter Email ID" class="required email" data-error="Above field is required."/>
+									<em class="error"></em>
                                 </li>
                                 <li class="full">
                                     <p>Phone</p>
-                                    <input type="tel"  name="phone" placeholder="Enter Phone Number" required/>
+                                    <input type="tel"  name="phone" placeholder="Enter Phone Number" class="required" data-error="Above field is required."/>
+									<em class="error"></em>
                                 </li>
                                 <li class="full">
                                     <p>Special Request <small>(Optional)</small></p>
                                     <textarea rows="3"  name="note" placeholder="Any special note for us? Please it down."></textarea>
                                 </li>
                             </ul>
-							<input type="checkbox" style="float:left; margin-right:5px;"/><p> Yes, I want to receive email messages from American Spirits Roadhouse.</p>
+							<input type="checkbox" name="newsletter" style="float:left; margin-right:5px;"/><p> Yes, I want to receive email messages from American Spirits Roadhouse.</p>
                         </fieldset>
                         <div style="text-align: center">
                             <input type="submit" class="btn" value="Book the Space">
